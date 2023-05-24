@@ -9,7 +9,7 @@ AirFryer Eletrolux | AirFryer Philips-Walita  |  AirFryer Philco
 :-------------------------:|:-------------------------:|:-------------------------:
 <img src="https://electrolux.vtexassets.com/arquivos/ids/219311-1200-1200?v=637849516015500000&width=1200&height=1200&aspect=true" data-canonical-src="https://electrolux.vtexassets.com/arquivos/ids/219311-1200-1200?v=637849516015500000&width=1200&height=1200&aspect=true" width="200"/> | <img src="https://polishop.vtexassets.com/arquivos/ids/680556-1200-1200?v=637799494321430000&width=1200&height=1200&aspect=true" data-canonical-src="https://polishop.vtexassets.com/arquivos/ids/680556-1200-1200?v=637799494321430000&width=1200&height=1200&aspect=true" width="200"/> | <img src="https://i.zst.com.br/thumbs/12/c/39/1942768547.jpg" data-canonical-src="https://i.zst.com.br/thumbs/12/c/39/1942768547.jpg" width="200"/>
 
-O trablho envolve o desenovlimento do software que efetua o controle completo de um forno AirFyer incluindo ligar/desligar o equipamento, controlar a temperatura, temporização e diferentes modos de alimentos. Especificamente a temperatura do forno é controlada à partir de dois elementos *atuadores*: um resistor de potência de 15 Watts utilizado para aquecer o forno e uma ventoinha que puxa o ar externo (temperatura ambiente) para reduzir a temperatura do sistema. 
+O trabalho envolve o desenovlimento do software que efetua o controle completo de um forno AirFyer incluindo ligar/desligar o equipamento, controlar a temperatura, temporização e diferentes modos de alimentos. Especificamente a temperatura do forno é controlada à partir de dois elementos *atuadores*: um resistor de potência de 15 Watts utilizado para aquecer o forno e uma ventoinha que puxa o ar externo (temperatura ambiente) para reduzir a temperatura do sistema. 
 
 Os comandos do usuário do sistema para definir a temperatura desejada serão controlados de três maneiras:
 1. Através de botões físicos (encoder rotatório);
@@ -133,7 +133,8 @@ Para acessar as informações via UART envie mensagens em formato MODBUS com o s
 | **0x01** | **0x16** | **0xD4** N N N N |	Modo de Controle da Temperatura de referência (Dashboard = 0 / Curva/Terminal = 1) (1 byte) | 0x00 0x16 0xD4 + int (4 bytes de modo de controle) | 
 | **0x01** | **0x16** | **0xD5** N N N N |	Envia Estado de Funcionamento (Funcionando = 1 / Parado = 0) | 0x00 0x16 0xD5 + int (4 bytes de estado) | 
 | **0x01** | **0x16** | **0xD6** N N N N |	Envia Temperatura Ambiente (Float)) | 0x00 0x16 0xD6 + float (4 bytes) |  
-| **0x01** | **0x16** | **0xD7** N N N N |	Envia String do Display LCD para o Dashboard | 0x00 0x16 0xD7 + 1 byte: tamanho da string + N bytes da String |  
+| **0x01** | **0x16** | **0xD7** N N N N |	Envia Contador de Tempo (usado no modo de pré-programação) | 0x00 0x16 0xD7 + int (4 bytes ) |  
+| **0x01** | **0x16** | **0xD8** N N N N |	Envia String do Display LCD para o Dashboard | 0x00 0x16 0xD8 + 1 byte: tamanho da string + N bytes da String |  
 
 Obs: todas as mensagens devem ser enviadas com o CRC e também recebidas verificando o CRC. Caso esta verificação não seja válida, a mensagem deverá ser descartada e uma nova solicitação deverá ser realizada.
 
