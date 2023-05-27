@@ -152,6 +152,11 @@ Obs: todas as mensagens devem ser enviadas com o CRC e também recebidas verific
 
 A leitura dos comandos via UART deve ser realizada a cada **200 ms**.
 
+### Links dos Dashboards
+
+[AirFryer 2](http://164.41.98.25:443/dashboard/5e071200-fa76-11ed-ab24-250be7c7f3e7?publicId=ba042a80-0322-11ed-9f25-414fbaf2b065)  
+[AirFryer 3](http://164.41.98.25:443/dashboard/50bc4810-fb2d-11ed-ab24-250be7c7f3e7?publicId=ba042a80-0322-11ed-9f25-414fbaf2b065) 
+
 ## 7. Parâmetros de PID
 
 Para o uso do controle do PID, estão sendo sugeridos os seguintes valores para as constantes:
