@@ -127,14 +127,14 @@ Para acessar as informações via UART envie mensagens em formato MODBUS com o s
 | **0x01** | **0x23** | **0xC1** N N N N |	Solicita Temperatura Interna  | 0x00 0x23 0xC1 + float (4 bytes) |
 | **0x01** | **0x23** | **0xC2** N N N N |	Solicita Temperatura de Referência	| 0x00 0x23 0xC2 + float (4 bytes) |
 | **0x01** | **0x23** | **0xC3** N N N N |	Lê comandos do usuário  | 0x00 0x23 0xC3 + int (4 bytes de comando) | 
-| **0x01** | **0x16** | **0xD1** N N N N |	Envia sinal de controle Int (4 bytes) | 0x00 0x16 0xD1 |
-| **0x01** | **0x16** | **0xD2** N N N N |	Envia sinal de Referência Float (4 bytes) | 0x00 0x16 0xD2 |
-| **0x01** | **0x16** | **0xD3** N N N N |	Envia Estado do Sistema (Ligado = 1 / Desligado = 0) | 0x00 0x16 0xD3 + int (4 bytes de estado) | 
-| **0x01** | **0x16** | **0xD4** N N N N |	Modo de Controle da Temperatura de referência (Dashboard = 0 / Curva/Terminal = 1) (1 byte) | 0x00 0x16 0xD4 + int (4 bytes de modo de controle) | 
-| **0x01** | **0x16** | **0xD5** N N N N |	Envia Estado de Funcionamento (Funcionando = 1 / Parado = 0) | 0x00 0x16 0xD5 + int (4 bytes de estado) | 
-| **0x01** | **0x16** | **0xD6** N N N N |	Envia Temperatura Ambiente (Float)) | 0x00 0x16 0xD6 + float (4 bytes) |  
-| **0x01** | **0x16** | **0xD7** N N N N |	Envia Contador de Tempo (usado no modo de pré-programação) | 0x00 0x16 0xD7 + int (4 bytes ) |  
-| **0x01** | **0x16** | **0xD8** N N N N |	Envia String do Display LCD para o Dashboard | 0x00 0x16 0xD8 + 1 byte: tamanho da string + N bytes da String |  
+| **0x01** | **0x16** | **0xD1** N N N N |	Envia sinal de controle Int (4 bytes) |  |
+| **0x01** | **0x16** | **0xD2** N N N N |	Envia sinal de Referência Float (4 bytes) |  |
+| **0x01** | **0x16** | **0xD3** N N N N |	Envia Estado do Sistema (Ligado = 1 / Desligado = 0) - (4 bytes)|  | 
+| **0x01** | **0x16** | **0xD4** N N N N |	Modo de Controle da Temperatura de referência (Dashboard = 0 / Curva/Terminal = 1) (4 bytes) |  | 
+| **0x01** | **0x16** | **0xD5** N N N N |	Envia Estado de Funcionamento (Funcionando = 1 / Parado = 0) (4 bytes) |  | 
+| **0x01** | **0x16** | **0xD6** N N N N |	Envia Temperatura Ambiente (Float)) (4 bytes) |  |  
+| **0x01** | **0x16** | **0xD7** N N N N |	Envia Contador de Tempo (usado no modo de pré-programação) (4 bytes) |  |  
+| **0x01** | **0x16** | **0xD8** N N N N |	Envia String do Display LCD para o Dashboard (1 byte: tamanho da string + N bytes da String) |  |  
 
 Obs: todas as mensagens devem ser enviadas com o CRC e também recebidas verificando o CRC. Caso esta verificação não seja válida, a mensagem deverá ser descartada e uma nova solicitação deverá ser realizada.
 
@@ -153,9 +153,10 @@ Obs: todas as mensagens devem ser enviadas com o CRC e também recebidas verific
 A leitura dos comandos via UART deve ser realizada a cada **200 ms**.
 
 ### Links dos Dashboards
-
+[AirFryer 1](http://164.41.98.25:443/dashboard/5dcbaf20-fcc5-11ed-ab24-250be7c7f3e7?publicId=ba042a80-0322-11ed-9f25-414fbaf2b065)  
 [AirFryer 2](http://164.41.98.25:443/dashboard/5e071200-fa76-11ed-ab24-250be7c7f3e7?publicId=ba042a80-0322-11ed-9f25-414fbaf2b065)  
-[AirFryer 3](http://164.41.98.25:443/dashboard/50bc4810-fb2d-11ed-ab24-250be7c7f3e7?publicId=ba042a80-0322-11ed-9f25-414fbaf2b065) 
+[AirFryer 3](http://164.41.98.25:443/dashboard/50bc4810-fb2d-11ed-ab24-250be7c7f3e7?publicId=ba042a80-0322-11ed-9f25-414fbaf2b065)   
+[AirFryer 4](http://164.41.98.25:443/dashboard/5caf0fb0-fe32-11ed-ab24-250be7c7f3e7?publicId=ba042a80-0322-11ed-9f25-414fbaf2b065)
 
 ## 7. Parâmetros de PID
 
