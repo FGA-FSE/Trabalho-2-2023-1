@@ -189,10 +189,10 @@ A avaliação será realizada seguindo os seguintes critérios:
 |   ITEM    |   COMENTÁRIO  |   VALOR   |
 |------------------------|---------------------------------------------------------------------------------------------------------|---------|
 |**Implementação do controlador PID** | Correta implementação do controlador PID (Resistor / Venotinha), incluindo a leitura das temperaturas e acionamento dos atuadores. |    2,0 |
-|**Menu de controle**        | Correta implementação do menu apresentando as informações atualizadas ao usuário e permitindo o controle dos parâmetros do sistema. | 1,0 |
+|**Menu de controle**        | Correta implementação do menu com o uso do Encoder Rotatório apresentando as informações atualizadas ao usuário e permitindo o controle dos parâmetros do sistema. | 1,0 |
 |**Leitura da Temperatura Ambiente**| Leitura dos valores de Temperatura Ambiente (Sensor BMP280). | 0,5 |
 |**Comunicação UART** | Leitura dos valores de Temperatura Interna, Temperatura de Referência, Temporização, e comandos de ligar/desliga, inicar/parar e envio do sinal de controle através da comunicação MODBUS-UART. | 2,0 |
-|**Mostrador no LCD**        | Apresentação dos estados de funcionamento e apresentação das 3 temperatudas no LCD. | 1,0 |
+|**Mostrador no LCD**        | Apresentação dos estados de funcionamento, 3 temperatudas e do menu no LCD. | 1,0 |
 |**Armazenamento em arquivo**| Armazenamento em arquivo CSV dos dados medidos. |   0,5 |
 |**Qualidade do Código**     | Utilização de boas práticas como o uso de bons nomes, modularização e organização em geral.    |  2,0 |
 |**README com Experimento** | Documentação README com instruçoes de compilaçõa, uso e relatório do experimento com o gráfico. |  1,0 |
